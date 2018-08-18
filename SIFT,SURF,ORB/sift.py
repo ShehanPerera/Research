@@ -2,8 +2,9 @@ import numpy as np
 import cv2
 from matplotlib import pyplot as plt
 
-img1 = cv2.imread('3.jpg') # queryImage
-img2 = cv2.imread('3.jpg') # trainImage
+# Read image 
+img1 = cv2.imread('basmati.pgm')
+img2 = cv2.imread('basmati2.pgm') 
 
 # Initiate SIFT detector
 sift = cv2.xfeatures2d.SIFT_create()
@@ -37,5 +38,6 @@ for m,n in matches:
     if m.distance < 0.75*n.distance:
         good.append([m])
 
+print("matches ")
 print(len(good))
 
